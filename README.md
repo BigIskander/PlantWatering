@@ -1,7 +1,7 @@
 # PlantWatering
 Automatic Plant Watering and collecting soil moisture data
 
-To ignore changes in credentials:
+To ignore changes in credentials (only change locally):
 
 git update-index --assume-unchanged ./PlantWatering/PlantWatering/credentials.hpp
 
