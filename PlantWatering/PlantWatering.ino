@@ -37,7 +37,7 @@ void setup()
   pinMode(analog_pin, INPUT);
   
   //to test
-  pinMode(D8, INPUT);
+  //pinMode(D8, INPUT);
   
   //Off all transistors
   digitalWrite(voltage_pin, LOW);
