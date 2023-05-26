@@ -11,12 +11,14 @@ password = cr.password
 
 topic1 = "moisture"
 topic2 = "voltage"
+topic3 = "water"
 data_file = "./data.csv"
 
 def on_connect(client, userdata, flags, rc):
     if rc == 0:
         client.subscribe(topic1)
         client.subscribe(topic2)
+        client.subscribe(topic3)
         print("Connected")
         with open(data_file,'a+') as f:
             f.write(str(datetime.now()) + ";Connected;\n")
