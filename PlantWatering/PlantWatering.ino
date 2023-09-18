@@ -78,16 +78,22 @@ void setup()
   //connecting to WiFi
   WiFi.mode(WIFI_STA);
   WiFi.begin(ssid, pass);
-  while (WiFi.status() != WL_CONNECTED) { delay(100); }
+  int i = 0;
+  while (WiFi.status() != WL_CONNECTED) { 
+    delay(100);
+    // if can't connect in 10 seconds, 1 hour sleep
+    if(i >= 100) ESP.deepSleep(3.6e+9); 
+    i++;
+  }
   
   //Send data
   Serial.println("MQTT");
   client.setServer(mqtt_server, mqtt_port);
   String clientId = "WemosD1-" + WiFi.macAddress();
   if (client.connect(clientId.c_str(), mqtt_user, mqtt_password) ) {
-    if(client.publish(topic_voltage, String(voltage).c_str(), true) 
-    && client.publish(topic_moisture, String(moisture_percent).c_str(), true) 
-    && client.publish(topic_water, String(water).c_str(), true)) {
+    if(client.publish(topic_voltage, String(voltage).c_str(), retain) 
+    && client.publish(topic_moisture, String(moisture_percent).c_str(), retain) 
+    && client.publish(topic_water, String(water).c_str(), retain)) {
       Serial.println("Data sent.");
     } else {
       Serial.println("Can't send data.");
