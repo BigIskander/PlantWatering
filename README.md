@@ -7,4 +7,5 @@ git update-index --assume-unchanged ./PlantWatering/PlantWatering/credentials.hp
 
 git update-index --assume-unchanged ./PlantWatering/MQTT_Data/credentials.py
 
+<img src="./photo/IMG_20230326_100836.jpg">
 <video src="./photo/VID_20230604_092944.mp4">
