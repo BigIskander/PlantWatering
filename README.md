@@ -16,7 +16,7 @@ This device allow to water single plant and to collect soil moisture data.
 <br/><b><i>Structure of folders:</i></b>
 <br/><b>CircuitDiagram</b> - circuit diagram with the list of necessary electronic components
 <br/><b>PlantWatering</b> - program for microcontroller
-<br/><b>MQTT_Data</b> - simple MQTT logger written in python
+<br/><b>MQTT_Data</b> - simple MQTT logger written in python and jupyter notebook file to manage collected data
 <br/><b>photo</b> - photo and video of the device
 
 Device checks soil moisture once an hour and will pour approximately 300 ml of water when soil moisture below 20%.
